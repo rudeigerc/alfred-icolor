@@ -35,7 +35,7 @@
 	<key>createdby</key>
 	<string>Yuchen Cheng</string>
 	<key>description</key>
-	<string>Genertate colors from hex string</string>
+	<string>Generate colors from hex string</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>

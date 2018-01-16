@@ -1,6 +1,6 @@
 # alfred-icolor [![Build Status](https://travis-ci.org/rudeigerc/alfred-icolor.svg?branch=master)](https://travis-ci.org/rudeigerc/alfred-icolor)
 
->  An Alfred workflow to genertate colors from hex string (for personal use)
+>  An Alfred workflow to generate colors from hex string (for personal use)
 
 
 ## Install
