@@ -3,12 +3,12 @@ import alfyTest from 'alfy-test';
 
 test(async t => {
 	const alfy = alfyTest();
-	const result = await alfy('Rainbow');
+	const result = await alfy('#FFFFFF');
 
 	t.deepEqual(result, [
 		{
-			title: 'Unicorn',
-			subtitle: 'Rainbow'
+			title: 'UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)',
+			subtitle: '#FFFFFF'
 		}
 	]);
 });
