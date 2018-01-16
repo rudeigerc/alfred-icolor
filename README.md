@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ git clone https://github.com/rudeigerc/alfred-icolor
+$ git clone https://github.com/rudeigerc/alfred-icolor.git
 $ cp -r alfred-icolor ~/Documents/Alfred.alfredpreferences/workflows/
 $ rm -r alfred-icolor
 ```
