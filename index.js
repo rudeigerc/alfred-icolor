@@ -1,5 +1,6 @@
 'use strict';
 const alfy = require('alfy');
+
 const items = [];
 const number = 2;
 
@@ -7,7 +8,12 @@ if (alfy.input.startsWith('#')) {
 	const hexStr = alfy.input.substr(1);
 	const regex = /^[a-f0-9]{3,8}$/ig;
 	if (hexStr.match(regex)) {
-		let divisor, red, green, blue, alpha, result;
+		let divisor;
+		let red;
+		let green;
+		let blue;
+		let alpha;
+		let result;
 		const hex = parseInt(hexStr, 16);
 		switch (hexStr.length) {
 			case 3:
@@ -39,7 +45,7 @@ if (alfy.input.startsWith('#')) {
 				divisor = 255.0;
 				alpha = ((hex & 0xFF000000) >> 24) / divisor;
 				red = ((hex & 0x00FF0000) >> 16) / divisor;
-				green = ((hex & 0x0000FF00) >>  8) / divisor;
+				green = ((hex & 0x0000FF00) >> 8) / divisor;
 				blue = (hex & 0x000000FF) / divisor;
 				result = `UIColor(red: ${red.toFixed(number)}, green: ${green.toFixed(number)}, blue: ${blue.toFixed(number)}, alpha: ${alpha.toFixed(number)})`;
 				break;
@@ -58,7 +64,7 @@ if (alfy.input.startsWith('#')) {
 	}
 }
 
-if (!items.length) {
+if (items.length === 0) {
 	items.push({
 		title: 'Invalid argument'
 	});
