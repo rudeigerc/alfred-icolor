@@ -3,7 +3,7 @@
 >  An Alfred workflow to generate colors from hex string (for personal use)
 
 
-## Install
+## Installation
 
 ```
 $ git clone https://github.com/rudeigerc/alfred-icolor.git
@@ -16,7 +16,17 @@ $ rm -r alfred-icolor
 
 ## Usage
 
-In Alfred, type `icolor`, <kbd>Enter</kbd>, and your query.
+In Alfred, type `icolor`, and the hex string which represents colors, starting with `#`.
+
+### Input
+```
+icolor #FFFFFFFF
+```
+
+### Output
+```swift
+UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
+```
 
 ## Reference
 
@@ -24,4 +34,4 @@ In Alfred, type `icolor`, <kbd>Enter</kbd>, and your query.
 
 ## License
 
-MIT © [rudeigerc](https://rudeigerc.github.io)
+**alfred-icolor** is available under the MIT License.
