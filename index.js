@@ -43,7 +43,7 @@ if (alfy.input.startsWith('#')) {
 
 			case 8:	// ARGB
 				divisor = 255.0;
-				alpha = ((hex & 0xFF000000) >> 24) / divisor;
+				alpha = ((hex & 0xFF000000) >>> 24) / divisor;
 				red = ((hex & 0x00FF0000) >> 16) / divisor;
 				green = ((hex & 0x0000FF00) >> 8) / divisor;
 				blue = (hex & 0x000000FF) / divisor;
