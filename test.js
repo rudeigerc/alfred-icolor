@@ -20,7 +20,7 @@ test('hex3 invalid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'Invalid argument',
+			title: 'Invalid argument'
 		}
 	]);
 });
@@ -44,7 +44,7 @@ test('hex4 invalid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'Invalid argument',
+			title: 'Invalid argument'
 		}
 	]);
 });
@@ -68,7 +68,7 @@ test('hex6 invalid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'Invalid argument',
+			title: 'Invalid argument'
 		}
 	]);
 });
@@ -92,7 +92,7 @@ test('hex8 invalid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'Invalid argument',
+			title: 'Invalid argument'
 		}
 	]);
 });
@@ -103,7 +103,7 @@ test('format invalid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'Invalid argument',
+			title: 'Invalid argument'
 		}
 	]);
 });
@@ -114,7 +114,7 @@ test('length invalid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'Invalid argument',
+			title: 'Invalid argument'
 		}
 	]);
 });
