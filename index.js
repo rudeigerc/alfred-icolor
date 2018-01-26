@@ -4,7 +4,7 @@ const config = require('./config');
 
 const items = [];
 const decimalPlace = config.decimalPlace;
-const mode = config.mode
+const mode = config.mode;
 const hexString = alfy.input;
 const regex = /^[a-f0-9]{3,8}$/ig;
 
@@ -39,7 +39,6 @@ function hexToColor(hexString) {
 				color.green = ((hex & 0x00F0) >> 4) / divisor;
 				color.blue = (hex & 0x000F) / divisor;
 			}
-
 			break;
 		}
 		case 6: {

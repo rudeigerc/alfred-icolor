@@ -22,7 +22,7 @@ test('hex3 invalid', async t => {
 		{
 			title: 'Invalid argument',
 			icon: {
-				'path': '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
+				path: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
 			}
 		}
 	]);
@@ -49,7 +49,7 @@ test('hex4 invalid', async t => {
 		{
 			title: 'Invalid argument',
 			icon: {
-				'path': '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
+				path: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
 			}
 		}
 	]);
@@ -76,7 +76,7 @@ test('hex6 invalid', async t => {
 		{
 			title: 'Invalid argument',
 			icon: {
-				'path': '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
+				path: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
 			}
 		}
 	]);
@@ -103,7 +103,7 @@ test('hex8 invalid', async t => {
 		{
 			title: 'Invalid argument',
 			icon: {
-				'path': '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
+				path: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
 			}
 		}
 	]);
@@ -117,7 +117,7 @@ test('length invalid', async t => {
 		{
 			title: 'Invalid argument',
 			icon: {
-				'path': '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
+				path: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
 			}
 		}
 	]);
