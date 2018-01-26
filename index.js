@@ -1,66 +1,71 @@
 'use strict';
+const config = require('./config');
 const alfy = require('alfy');
 
 const items = [];
-const number = 2;
+const decimalPlace = config.decimalPlace;
+const hexString = alfy.input;
+const regex = /^[a-f0-9]{3,8}$/ig;
 
-if (alfy.input.startsWith('#')) {
-	const hexStr = alfy.input.substr(1);
-	const regex = /^[a-f0-9]{3,8}$/ig;
-	if (hexStr.match(regex)) {
-		let divisor;
-		let red;
-		let green;
-		let blue;
-		let alpha;
-		let result;
-		const hex = parseInt(hexStr, 16);
-		switch (hexStr.length) {
-			case 3:
-				divisor = 15.0;
-				red = ((hex & 0xF00) >> 8) / divisor;
-				green = ((hex & 0x0F0) >> 4) / divisor;
-				blue = (hex & 0x00F) / divisor;
-				result = `UIColor(red: ${red.toFixed(number)}, green: ${green.toFixed(number)}, blue: ${blue.toFixed(number)}, alpha: 1.00)`;
-				break;
-
-			case 4:
-				divisor = 15.0;
-				alpha = ((hex & 0xF000) >> 12) / divisor;
-				red = ((hex & 0x0F00) >> 8) / divisor;
-				green = ((hex & 0x00F0) >> 4) / divisor;
-				blue = (hex & 0x000F) / divisor;
-				result = `UIColor(red: ${red.toFixed(number)}, green: ${green.toFixed(number)}, blue: ${blue.toFixed(number)}, alpha: ${alpha.toFixed(number)})`;
-				break;
-
-			case 6:	// RGB
-				divisor = 255.0;
-				red = ((hex & 0xFF0000) >> 16) / divisor;
-				green = ((hex & 0x00FF00) >> 8) / divisor;
-				blue = (hex & 0x0000FF) / divisor;
-				result = `UIColor(red: ${red.toFixed(number)}, green: ${green.toFixed(number)}, blue: ${blue.toFixed(number)}, alpha: 1.00)`;
-				break;
-
-			case 8:	// ARGB
-				divisor = 255.0;
-				alpha = ((hex & 0xFF000000) >>> 24) / divisor;
-				red = ((hex & 0x00FF0000) >> 16) / divisor;
-				green = ((hex & 0x0000FF00) >> 8) / divisor;
-				blue = (hex & 0x000000FF) / divisor;
-				result = `UIColor(red: ${red.toFixed(number)}, green: ${green.toFixed(number)}, blue: ${blue.toFixed(number)}, alpha: ${alpha.toFixed(number)})`;
-				break;
-
-			default:
-				break;
+function hexToColor(hexString) {
+	const color = {
+		red: 0,
+		green: 0,
+		blue: 0,
+		alpha: 0,
+	};
+	let divisor;
+	const hex = parseInt(hexString, 16);
+	switch (hexString.length) {
+		case 3: {
+			divisor = 15.0;
+			color.red = ((hex & 0xF00) >> 8) / divisor;
+			color.green = ((hex & 0x0F0) >> 4) / divisor;
+			color.blue = (hex & 0x00F) / divisor;
+			color.alpha = 0;
+			break;
 		}
-
-		if (result) {
-			items.push({
-				title: result,
-				subtitle: alfy.input,
-				arg: result
-			});
+		case 4: {
+			divisor = 15.0;
+			color.red = ((hex & 0xF000) >> 12) / divisor;
+			color.green = ((hex & 0x0F00) >> 8) / divisor;
+			color.blue = ((hex & 0x00F0) >> 4) / divisor;
+			color.alpha = (hex & 0x000F) / divisor;
+			break;
 		}
+		case 6: {
+			divisor = 255.0;
+			color.red = ((hex & 0xFF0000) >> 16) / divisor;
+			color.green = ((hex & 0x00FF00) >> 8) / divisor;
+			color.blue = (hex & 0x0000FF) / divisor;
+			color.alpha = 0
+			break;
+		}
+		case 8: {
+			divisor = 255.0;
+			color.red = ((hex & 0xFF000000) >>> 24) / divisor;
+			color.green = ((hex & 0x00FF0000) >> 16) / divisor;
+			color.blue = ((hex & 0x0000FF00) >> 8) / divisor;
+			color.alpha = (hex & 0x000000FF) / divisor;
+			break;
+		}
+		default: {
+			return null
+			break;
+		}
+	}
+	return color;
+};
+
+if (hexString.match(regex)) {
+	const color = hexToColor(hexString);
+	if (color) {
+		const result = `UIColor(red: ${color.red.toFixed(decimalPlace)}, green: ${color.green.toFixed(decimalPlace)}, blue: ${color.blue.toFixed(decimalPlace)}, alpha: ${color.alpha.toFixed(decimalPlace)})`;
+		items.push({
+			title: result,
+			subtitle: `#${hexString}`,
+			arg: result
+		});
 	}
 }
 

@@ -3,7 +3,7 @@ import alfyTest from 'alfy-test';
 
 test('hex3 valid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#000');
+	const result = await alfy('000');
 
 	t.deepEqual(result, [
 		{
@@ -16,7 +16,7 @@ test('hex3 valid', async t => {
 
 test('hex3 invalid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFG');
+	const result = await alfy('FFG');
 
 	t.deepEqual(result, [
 		{
@@ -27,7 +27,7 @@ test('hex3 invalid', async t => {
 
 test('hex4 valid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FF00');
+	const result = await alfy('FF00');
 
 	t.deepEqual(result, [
 		{
@@ -40,7 +40,7 @@ test('hex4 valid', async t => {
 
 test('hex4 invalid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFFG');
+	const result = await alfy('FFFG');
 
 	t.deepEqual(result, [
 		{
@@ -51,7 +51,7 @@ test('hex4 invalid', async t => {
 
 test('hex6 valid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFFFFF');
+	const result = await alfy('FFFFFF');
 
 	t.deepEqual(result, [
 		{
@@ -64,7 +64,7 @@ test('hex6 valid', async t => {
 
 test('hex6 invalid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFFFFG');
+	const result = await alfy('FFFFFG');
 
 	t.deepEqual(result, [
 		{
@@ -75,7 +75,7 @@ test('hex6 invalid', async t => {
 
 test('hex8 valid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFFF00FF');
+	const result = await alfy('FFFF00FF');
 
 	t.deepEqual(result, [
 		{
@@ -88,18 +88,7 @@ test('hex8 valid', async t => {
 
 test('hex8 invalid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFFFFFFG');
-
-	t.deepEqual(result, [
-		{
-			title: 'Invalid argument'
-		}
-	]);
-});
-
-test('format invalid', async t => {
-	const alfy = alfyTest();
-	const result = await alfy('FFF');
+	const result = await alfy('FFFFFFFG');
 
 	t.deepEqual(result, [
 		{
@@ -110,7 +99,7 @@ test('format invalid', async t => {
 
 test('length invalid', async t => {
 	const alfy = alfyTest();
-	const result = await alfy('#FFFFF');
+	const result = await alfy('FFFFF');
 
 	t.deepEqual(result, [
 		{

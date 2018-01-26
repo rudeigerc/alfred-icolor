@@ -1,6 +1,6 @@
 {
   "name": "alfred-icolor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": " An Alfred workflow to generate colors from hex string",
   "license": "MIT",
   "repository": "rudeigerc/alfred-icolor",
@@ -19,13 +19,15 @@
   },
   "files": [
     "index.js",
+    "config.js",
     "icon.png",
     "info.plist"
   ],
   "keywords": [
     "alfred",
     "workflow",
-    "alfy"
+    "alfy",
+    "color"
   ],
   "dependencies": {
     "alfy": "^0.6.0"

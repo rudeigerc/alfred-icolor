@@ -9,6 +9,8 @@
 $ git clone https://github.com/rudeigerc/alfred-icolor.git
 $ cp -r alfred-icolor ~/Documents/Alfred.alfredpreferences/workflows/
 $ rm -r alfred-icolor
+$ cd ~/Documents/Alfred.alfredpreferences/workflows/alfred-icolor
+$ npm install
 ```
 
 *Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
@@ -20,7 +22,7 @@ In Alfred, type `icolor`, and the hex string which represents colors, starting w
 
 ### Input
 ```
-icolor #FFFFFFFF
+#FFFFFFFF
 ```
 
 ### Output
