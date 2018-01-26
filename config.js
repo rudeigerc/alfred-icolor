@@ -1,2 +1,2 @@
 'use strict';
-exports.decimalPlace = 2
+exports.decimalPlace = 2;

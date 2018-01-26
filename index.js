@@ -1,6 +1,6 @@
 'use strict';
-const config = require('./config');
 const alfy = require('alfy');
+const config = require('./config');
 
 const items = [];
 const decimalPlace = config.decimalPlace;
@@ -12,7 +12,7 @@ function hexToColor(hexString) {
 		red: 0,
 		green: 0,
 		blue: 0,
-		alpha: 0,
+		alpha: 0
 	};
 	let divisor;
 	const hex = parseInt(hexString, 16);
@@ -38,7 +38,7 @@ function hexToColor(hexString) {
 			color.red = ((hex & 0xFF0000) >> 16) / divisor;
 			color.green = ((hex & 0x00FF00) >> 8) / divisor;
 			color.blue = (hex & 0x0000FF) / divisor;
-			color.alpha = 0
+			color.alpha = 0;
 			break;
 		}
 		case 8: {
@@ -50,12 +50,11 @@ function hexToColor(hexString) {
 			break;
 		}
 		default: {
-			return null
-			break;
+			return null;
 		}
 	}
 	return color;
-};
+}
 
 if (hexString.match(regex)) {
 	const color = hexToColor(hexString);
