@@ -9,10 +9,10 @@ const regex = /^[a-f0-9]{3,8}$/ig;
 
 function hexToColor(hexString) {
 	const color = {
-		red: 0,
-		green: 0,
-		blue: 0,
-		alpha: 0
+		red: 0.0,
+		green: 0.0,
+		blue: 0.0,
+		alpha: 1.0
 	};
 	let divisor;
 	const hex = parseInt(hexString, 16);
@@ -22,7 +22,7 @@ function hexToColor(hexString) {
 			color.red = ((hex & 0xF00) >> 8) / divisor;
 			color.green = ((hex & 0x0F0) >> 4) / divisor;
 			color.blue = (hex & 0x00F) / divisor;
-			color.alpha = 0;
+			color.alpha = 1.0;
 			break;
 		}
 		case 4: {
@@ -38,7 +38,7 @@ function hexToColor(hexString) {
 			color.red = ((hex & 0xFF0000) >> 16) / divisor;
 			color.green = ((hex & 0x00FF00) >> 8) / divisor;
 			color.blue = (hex & 0x0000FF) / divisor;
-			color.alpha = 0;
+			color.alpha = 1.0;
 			break;
 		}
 		case 8: {

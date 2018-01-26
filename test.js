@@ -31,9 +31,9 @@ test('hex4 valid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.00)',
+			title: 'UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 0.00)',
 			subtitle: '#FF00',
-			arg: 'UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.00)'
+			arg: 'UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 0.00)'
 		}
 	]);
 });
@@ -79,9 +79,9 @@ test('hex8 valid', async t => {
 
 	t.deepEqual(result, [
 		{
-			title: 'UIColor(red: 1.00, green: 0.00, blue: 1.00, alpha: 1.00)',
+			title: 'UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.00)',
 			subtitle: '#FFFF00FF',
-			arg: 'UIColor(red: 1.00, green: 0.00, blue: 1.00, alpha: 1.00)'
+			arg: 'UIColor(red: 1.00, green: 1.00, blue: 0.00, alpha: 1.00)'
 		}
 	]);
 });
