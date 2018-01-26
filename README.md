@@ -1,24 +1,31 @@
-# alfred-icolor [![Build Status](https://travis-ci.org/rudeigerc/alfred-icolor.svg?branch=master)](https://travis-ci.org/rudeigerc/alfred-icolor)
+# alfred-icolor
+[![buildStatus](https://travis-ci.org/rudeigerc/alfred-icolor.svg?branch=master)](https://travis-ci.org/rudeigerc/alfred-icolor)
+[![version](https://img.shields.io/badge/version-0.1.3-blue.svg)](https://github.com/rudeigerc/alfred-icolor)
+[![license:mit](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
->  An Alfred workflow to generate colors from hex string (for personal use)
+>  An Alfred workflow to generate colors from hex string (for personal use).
 
 
 ## Installation
 
 ```
+$ cd ~/Documents/Alfred.alfredpreferences/workflows/
 $ git clone https://github.com/rudeigerc/alfred-icolor.git
-$ cp -r alfred-icolor ~/Documents/Alfred.alfredpreferences/workflows/
-$ rm -r alfred-icolor
-$ cd ~/Documents/Alfred.alfredpreferences/workflows/alfred-icolor
+$ cd alfred-icolor
 $ npm install
 ```
 
-*Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
+*Require [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
+## Screenshot
+![screenshot](screenshot.png)
 
 ## Usage
 
 In Alfred, type `icolor`, and the hex string which represents colors, starting with `#`.
+
+### Config
+See `config.js`.
 
 ### Input
 ```

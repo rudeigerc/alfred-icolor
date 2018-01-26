@@ -4,6 +4,7 @@ const config = require('./config');
 
 const items = [];
 const decimalPlace = config.decimalPlace;
+const mode = config.mode
 const hexString = alfy.input;
 const regex = /^[a-f0-9]{3,8}$/ig;
 
@@ -27,10 +28,18 @@ function hexToColor(hexString) {
 		}
 		case 4: {
 			divisor = 15.0;
-			color.red = ((hex & 0xF000) >> 12) / divisor;
-			color.green = ((hex & 0x0F00) >> 8) / divisor;
-			color.blue = ((hex & 0x00F0) >> 4) / divisor;
-			color.alpha = (hex & 0x000F) / divisor;
+			if (mode === 'RGBA') {
+				color.red = ((hex & 0xF000) >> 12) / divisor;
+				color.green = ((hex & 0x0F00) >> 8) / divisor;
+				color.blue = ((hex & 0x00F0) >> 4) / divisor;
+				color.alpha = (hex & 0x000F) / divisor;
+			} else if (mode === 'ARGB') {
+				color.alpha = ((hex & 0xF000) >> 12) / divisor;
+				color.red = ((hex & 0x0F00) >> 8) / divisor;
+				color.green = ((hex & 0x00F0) >> 4) / divisor;
+				color.blue = (hex & 0x000F) / divisor;
+			}
+
 			break;
 		}
 		case 6: {
@@ -43,10 +52,17 @@ function hexToColor(hexString) {
 		}
 		case 8: {
 			divisor = 255.0;
-			color.red = ((hex & 0xFF000000) >>> 24) / divisor;
-			color.green = ((hex & 0x00FF0000) >> 16) / divisor;
-			color.blue = ((hex & 0x0000FF00) >> 8) / divisor;
-			color.alpha = (hex & 0x000000FF) / divisor;
+			if (mode === 'RGBA') {
+				color.red = ((hex & 0xFF000000) >>> 24) / divisor;
+				color.green = ((hex & 0x00FF0000) >> 16) / divisor;
+				color.blue = ((hex & 0x0000FF00) >> 8) / divisor;
+				color.alpha = (hex & 0x000000FF) / divisor;
+			} else if (mode === 'ARGB') {
+				color.alpha = ((hex & 0xFF000000) >>> 24) / divisor;
+				color.red = ((hex & 0x00FF0000) >> 16) / divisor;
+				color.green = ((hex & 0x0000FF00) >> 8) / divisor;
+				color.blue = (hex & 0x000000FF) / divisor;
+			}
 			break;
 		}
 		default: {
@@ -70,7 +86,10 @@ if (hexString.match(regex)) {
 
 if (items.length === 0) {
 	items.push({
-		title: 'Invalid argument'
+		title: 'Invalid argument',
+		icon: {
+			path: alfy.icon.error
+		}
 	});
 }
 
