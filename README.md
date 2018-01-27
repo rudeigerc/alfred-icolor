@@ -22,7 +22,7 @@ $ npm install
 
 ## Usage
 
-In Alfred, type `icolor`, and the hex string which represents colors, starting with `#`.
+In Alfred, type the hex string which represents colors, starting with `#`.
 
 ### Config
 See `config.js`.
