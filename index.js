@@ -9,7 +9,6 @@ const hexString = alfy.input;
 const regex = /^[a-f0-9]{3,8}$/ig;
 
 class Color {
-
 	constructor(hexString) {
 		this.hex = `#${hexString}`;
 		this.rgba = Color.hexToRgba(hexString);
@@ -134,7 +133,7 @@ if (hexString.match(regex)) {
 		const result = `UIColor(red: ${color.rgba.red.toFixed(decimalPlace)}, green: ${color.rgba.green.toFixed(decimalPlace)}, blue: ${color.rgba.blue.toFixed(decimalPlace)}, alpha: ${color.rgba.alpha.toFixed(decimalPlace)})`;
 		items.push({
 			title: result,
-			subtitle: `${color.hex}`,
+			subtitle: color.hex,
 			arg: result
 		});
 	}
