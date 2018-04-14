@@ -265,6 +265,20 @@ test('hex8 max', async t => {
 	]);
 });
 
+// lower case
+test('hex8 lower', async t => {
+	const alfy = alfyTest();
+	const result = await alfy('abcdefab');
+
+	t.deepEqual(result, [
+		{
+			title: 'UIColor(red: 0.67, green: 0.80, blue: 0.94, alpha: 0.67)',
+			subtitle: '#abcdefab',
+			arg: 'UIColor(red: 0.67, green: 0.80, blue: 0.94, alpha: 0.67)'
+		}
+	]);
+});
+
 // invalid
 test('invalid hex', async t => {
 	const alfy = alfyTest();
@@ -311,6 +325,20 @@ test('invalid float', async t => {
 test('invalid negative', async t => {
 	const alfy = alfyTest();
 	const result = await alfy('-FFF');
+
+	t.deepEqual(result, [
+		{
+			title: 'Invalid argument',
+			icon: {
+				path: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertStopIcon.icns'
+			}
+		}
+	]);
+});
+
+test('invalid positive', async t => {
+	const alfy = alfyTest();
+	const result = await alfy('+FFFF');
 
 	t.deepEqual(result, [
 		{
